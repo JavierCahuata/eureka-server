@@ -21,3 +21,11 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
+
+- task: DownloadPipelineArtifact@2
+  inputs:
+    buildType: 'specific'
+    project: '7704f3d9-f1b5-4c0a-bcf4-d7b3f103fd93'
+    definition: '2'
+    buildVersionToDownload: 'latest'
+    targetPath: '$(Pipeline.Workspace)'
